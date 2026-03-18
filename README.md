@@ -1,30 +1,63 @@
-# research-paper-agent
+# Research Paper Agent
 
-**AI research assistant — find papers, generate literature reviews**
+AI research assistant — find papers, generate literature reviews
 
-## Install
+## Features
+
+- Analysis - Gap Identifier
+Analysis - Literature Review
+Api
+Search - Arxiv
+Search - Pubmed
+Search - Semantic Scholar
+Visualization - Citation Network
+
+## Tech Stack
+
+- **Language:** Python
+- **Framework:** FastAPI
+- **Key Dependencies:** pydantic,fastapi,uvicorn,anthropic,openai,numpy
+- **Containerization:** Docker + Docker Compose
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.11+
+- Docker & Docker Compose (optional)
+
+### Installation
+
 ```bash
-pip install -e '.[dev]'
+git clone https://github.com/MukundaKatta/research-paper-agent.git
+cd research-paper-agent
+pip install -r requirements.txt
 ```
 
-## Quick Start
-```python
-from src import __version__
+### Running
+
+```bash
+uvicorn app.main:app --reload
 ```
 
-## Modules
-- **semantic_scholar**
-- **arxiv**
-- **pubmed**
-- **literature_review**
-- **gap_identifier**
-- **citation_network**
-- **api**
+### Docker
 
-## Docker
 ```bash
-docker compose up
+docker-compose up
+```
+
+## Project Structure
+
+```
+research-paper-agent/
+├── src/           # Source code
+├── tests/         # Test suite
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
 ```
 
 ## License
-(c) 2026 Officethree Technologies. All Rights Reserved.
+
+MIT
