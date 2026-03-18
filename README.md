@@ -1,63 +1,43 @@
-# Research Paper Agent
+# research-paper-agent
 
-AI research assistant — find papers, generate literature reviews
+**AI agent that reads, summarizes, and synthesizes research papers**
 
-## Features
+![Build](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-proprietary-red)
 
-- Analysis - Gap Identifier
-Analysis - Literature Review
-Api
-Search - Arxiv
-Search - Pubmed
-Search - Semantic Scholar
-Visualization - Citation Network
-
-## Tech Stack
-
-- **Language:** Python
-- **Framework:** FastAPI
-- **Key Dependencies:** pydantic,fastapi,uvicorn,anthropic,openai,numpy
-- **Containerization:** Docker + Docker Compose
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.11+
-- Docker & Docker Compose (optional)
-
-### Installation
-
+## Install
 ```bash
-git clone https://github.com/MukundaKatta/research-paper-agent.git
-cd research-paper-agent
-pip install -r requirements.txt
+pip install -e ".[dev]"
 ```
 
-### Running
+## Quick Start
+```python
+from src.core import ResearchPaperAgent
+ instance = ResearchPaperAgent()
+r = instance.search(input="test")
+```
 
+## CLI
 ```bash
-uvicorn app.main:app --reload
+python -m src status
+python -m src run --input "data"
 ```
 
-### Docker
+## API
+| Method | Description |
+|--------|-------------|
+| `search()` | Search |
+| `index()` | Index |
+| `rank()` | Rank |
+| `filter()` | Filter |
+| `get_suggestions()` | Get suggestions |
+| `export_results()` | Export results |
+| `get_stats()` | Get stats |
+| `reset()` | Reset |
 
+## Test
 ```bash
-docker-compose up
-```
-
-## Project Structure
-
-```
-research-paper-agent/
-├── src/           # Source code
-├── tests/         # Test suite
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
+pytest tests/ -v
 ```
 
 ## License
-
-MIT
+(c) 2026 Officethree Technologies. All Rights Reserved.
